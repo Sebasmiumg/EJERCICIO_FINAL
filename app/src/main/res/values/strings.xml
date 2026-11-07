@@ -21,4 +21,11 @@
     <string name="toggle_completed">Cambiar el estado de la tarea</string>
     <string name="action_mark_completed">Marcar como completada</string>
     <string name="action_mark_pending">Marcar como pendiente</string>
+    <string name="action_delete">Eliminar tarea</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete_dialog_title">¿Eliminar esta tarea?</string>
+    <string name="delete_dialog_message">Esta acción no se puede deshacer.</string>
+    <string name="task_deleted">Tarea eliminada</string>
+    <string name="undo">Deshacer</string>
 </resources>

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sebasmiumg.tareas.R
 import com.sebasmiumg.tareas.TareasApp
 import com.sebasmiumg.tareas.data.Task
@@ -46,7 +47,32 @@ class TaskDetailActivity : AppCompatActivity() {
         binding.textCreatedAt.text =
             DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT).format(Date(createdAt))
         binding.buttonToggleCompleted.setOnClickListener { toggleCompleted() }
+        binding.toolbar.inflateMenu(R.menu.menu_task_detail)
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            if (item.itemId == R.id.action_delete) {
+                confirmDelete()
+                true
+            } else {
+                false
+            }
+        }
         renderStatus()
+    }
+
+    private fun confirmDelete() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.delete_dialog_title)
+            .setMessage(R.string.delete_dialog_message)
+            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(R.string.delete) { _, _ -> deleteTask() }
+            .show()
+    }
+
+    private fun deleteTask() {
+        lifecycleScope.launch {
+            repository.deleteTask(taskId)
+            finish()
+        }
     }
 
     private fun toggleCompleted() {
