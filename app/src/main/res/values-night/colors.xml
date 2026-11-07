@@ -7,7 +7,9 @@
     <color name="md_surface">#1B1B1F</color>
     <color name="md_on_surface">#E4E1E6</color>
     <color name="md_surface_container">#1F1F23</color>
+    <color name="md_surface_container_high">#292A2E</color>
     <color name="md_surface_container_highest">#343438</color>
+    <color name="md_inverse_primary">#3B5BDB</color>
     <color name="md_surface_variant">#46464F</color>
     <color name="md_on_surface_variant">#C7C5D0</color>
     <color name="md_outline">#918F9A</color>
