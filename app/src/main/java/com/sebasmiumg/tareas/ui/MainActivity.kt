@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val repository by lazy { (application as TareasApp).repository }
-    private val adapter = TaskAdapter(onTaskClick = ::openTaskDetail)
+    private val adapter = TaskAdapter(
+        onTaskClick = ::openTaskDetail,
+        onCompletedChange = ::setTaskCompleted
+    )
 
     private var scrollToTopOnNextUpdate = false
 
@@ -56,6 +59,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun openTaskDetail(task: Task) {
         startActivity(TaskDetailActivity.newIntent(this, task))
+    }
+
+    private fun setTaskCompleted(task: Task, completed: Boolean) {
+        lifecycleScope.launch { repository.setCompleted(task.id, completed) }
     }
 
     /** La lista se actualiza sola cada vez que cambia la tabla de tareas en Room. */
