@@ -6,6 +6,8 @@
     <color name="md_on_primary_container">#001B5E</color>
     <color name="md_surface">#FEFBFF</color>
     <color name="md_on_surface">#1B1B1F</color>
+    <color name="md_surface_container">#F0EDF4</color>
+    <color name="md_surface_container_highest">#E8E6F0</color>
     <color name="md_surface_variant">#E3E1EC</color>
     <color name="md_on_surface_variant">#46464F</color>
     <color name="md_outline">#777680</color>
