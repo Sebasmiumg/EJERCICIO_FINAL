@@ -3,4 +3,13 @@
     <string name="status_pending">Pendiente</string>
     <string name="status_completed">Completada</string>
     <string name="empty_title">Aún no tienes tareas</string>
+    <string name="empty_hint">Toca el botón + para agregar la primera</string>
+    <string name="add_task">Agregar tarea</string>
+    <string name="add_task_title">Nueva tarea</string>
+    <string name="navigate_back">Volver</string>
+    <string name="hint_description">Descripción de la tarea</string>
+    <string name="hint_notes">Notas (opcional)</string>
+    <string name="save">Guardar</string>
+    <string name="error_description_required">Escribe una descripción</string>
+    <string name="task_added">Tarea agregada: %1$s</string>
 </resources>
