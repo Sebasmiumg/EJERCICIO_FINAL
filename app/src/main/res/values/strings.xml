@@ -12,4 +12,10 @@
     <string name="save">Guardar</string>
     <string name="error_description_required">Escribe una descripción</string>
     <string name="task_added">Tarea agregada: %1$s</string>
+    <string name="detail_title">Detalle de la tarea</string>
+    <string name="label_description">Descripción</string>
+    <string name="label_status">Estado</string>
+    <string name="label_notes">Notas</string>
+    <string name="label_created">Fecha de creación</string>
+    <string name="no_notes">Sin notas</string>
 </resources>

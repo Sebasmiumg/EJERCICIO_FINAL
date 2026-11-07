@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.sebasmiumg.tareas.R
 import com.sebasmiumg.tareas.TareasApp
+import com.sebasmiumg.tareas.data.Task
 import com.sebasmiumg.tareas.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val repository by lazy { (application as TareasApp).repository }
-    private val adapter = TaskAdapter()
+    private val adapter = TaskAdapter(onTaskClick = ::openTaskDetail)
 
     private var scrollToTopOnNextUpdate = false
 
@@ -51,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         observeTasks()
+    }
+
+    private fun openTaskDetail(task: Task) {
+        startActivity(TaskDetailActivity.newIntent(this, task))
     }
 
     /** La lista se actualiza sola cada vez que cambia la tabla de tareas en Room. */

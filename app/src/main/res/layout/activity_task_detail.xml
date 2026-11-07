@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationContentDescription="@string/navigate_back"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/detail_title" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                style="@style/TaskDetailLabel"
+                android:text="@string/label_description" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface" />
+
+            <TextView
+                style="@style/TaskDetailLabel"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_status" />
+
+            <TextView
+                android:id="@+id/textStatus"
+                style="@style/TaskDetailValue" />
+
+            <TextView
+                style="@style/TaskDetailLabel"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_notes" />
+
+            <TextView
+                android:id="@+id/textNotes"
+                style="@style/TaskDetailValue" />
+
+            <TextView
+                style="@style/TaskDetailLabel"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_created" />
+
+            <TextView
+                android:id="@+id/textCreatedAt"
+                style="@style/TaskDetailValue" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

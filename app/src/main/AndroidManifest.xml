@@ -23,6 +23,11 @@
             android:name=".ui.AddTaskActivity"
             android:exported="false"
             android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.TaskDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
     </application>
 
 </manifest>
